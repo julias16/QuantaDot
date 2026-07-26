@@ -6,31 +6,6 @@ A low-cost Arduino-based educational robot that transforms passive smartphone us
 
 ---
 
-## Table of Contents
-
-- [Overview](#overview)
-- [Objectives](#objectives)
-- [Features](#features)
-- [Project Highlights](#project-highlights)
-- [System Architecture](#system-architecture)
-- [Hardware Components](#hardware-components)
-- [Software Stack](#software-stack)
-- [Project Structure](#project-structure)
-- [How It Works](#how-it-works)
-- [Operating Modes](#operating-modes)
-- [Testing and Validation](#testing-and-validation)
-- [Educational & Social Impact](#educational--social-impact)
-- [Budget](#budget)
-- [Future Enhancements](#future-enhancements)
-- [Achievements](#achievements)
-- [Team](#team)
-- [Supervisor](#supervisor)
-- [Documentation](#documentation)
-- [Demo](#demo)
-- [License](#license)
-
----
-
 # Overview
 
 Quanta Dot is an educational robotics platform developed to encourage practical STEM education through interactive robotics. Rather than using smartphones solely for entertainment, students can use them to control and interact with a robot while learning the fundamentals of robotics, embedded systems, wireless communication, and intelligent navigation.
@@ -329,39 +304,6 @@ Assistant Professor
 Department of Computer Science and Engineering
 
 University of Asia Pacific
-
----
-
-# Documentation
-
-The complete project report is available in the **Documentation** directory.
-
----
-
-# Demo
-
-Project Demonstration
-
-```
-YouTube:
-https://www.youtube.com/watch?v=yUOjvMF4w7Q&t=3s
-```
-
----
-
-# Repository
-
-```
-Quanta-Dot/
-├── Arduino_Code/
-├── Circuit_Diagram/
-├── Documentation/
-├── Hardware/
-├── Images/
-├── Videos/
-├── LICENSE
-└── README.md
-```
 
 ---
 

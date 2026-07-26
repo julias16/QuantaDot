@@ -1,16 +1,47 @@
 # Quanta Dot
 
-## From Screen Time to Build Time: A Smart Device Operated Learning Robot
+> **From Screen Time to Build Time: A Smart Device Operated Learning Robot**
 
-A low-cost Arduino-based educational robot designed to transform passive smartphone usage into active STEM learning through robotics, embedded systems, Bluetooth communication, and obstacle avoidance.
+A low-cost Arduino-based educational robot that transforms passive smartphone usage into an interactive STEM learning experience. The robot supports **Bluetooth control**, **voice command control**, and **autonomous obstacle avoidance**, enabling students to explore robotics, embedded systems, and intelligent navigation through hands-on learning.
+
+---
+
+## Table of Contents
+
+- [Overview](#overview)
+- [Objectives](#objectives)
+- [Features](#features)
+- [Project Highlights](#project-highlights)
+- [System Architecture](#system-architecture)
+- [Hardware Components](#hardware-components)
+- [Software Stack](#software-stack)
+- [Project Structure](#project-structure)
+- [How It Works](#how-it-works)
+- [Operating Modes](#operating-modes)
+- [Testing and Validation](#testing-and-validation)
+- [Educational & Social Impact](#educational--social-impact)
+- [Budget](#budget)
+- [Future Enhancements](#future-enhancements)
+- [Achievements](#achievements)
+- [Team](#team)
+- [Supervisor](#supervisor)
+- [Documentation](#documentation)
+- [Demo](#demo)
+- [License](#license)
 
 ---
 
 # Overview
 
-Quanta Dot is an educational robotics platform developed to encourage hands-on learning in robotics, embedded systems, and engineering. The system enables users to control a robot through a mobile device while exploring practical concepts such as wireless communication, obstacle avoidance, motor control, and sensor integration.
+Quanta Dot is an educational robotics platform developed to encourage practical STEM education through interactive robotics. Rather than using smartphones solely for entertainment, students can use them to control and interact with a robot while learning the fundamentals of robotics, embedded systems, wireless communication, and intelligent navigation.
 
-The project is designed with affordability, portability, and accessibility in mind, making it suitable for schools, workshops, and beginner robotics education.
+The robot operates in three different modes:
+
+- Bluetooth Manual Control
+- Voice Command Control
+- Autonomous Obstacle Avoidance
+
+Designed using affordable and widely available components, the project is suitable for schools, workshops, robotics clubs, and beginner-level learners.
 
 ---
 
@@ -18,222 +49,274 @@ The project is designed with affordability, portability, and accessibility in mi
 
 ## General Objective
 
-Develop a low-cost smart educational robot that transforms passive mobile usage into active robotics and STEM learning.
+To develop a low-cost educational robot that transforms passive mobile device usage into active robotics and STEM learning.
 
 ## Specific Objectives
 
 - Design and develop a Bluetooth-controlled educational robot.
-- Implement obstacle detection and avoidance.
-- Integrate sound-based interaction.
-- Encourage practical STEM education.
+- Implement voice command-based robot navigation.
+- Integrate ultrasonic obstacle detection and avoidance.
 - Provide an affordable robotics learning platform.
+- Promote practical STEM education.
 - Increase student interest in robotics and embedded systems.
 - Evaluate educational effectiveness through demonstrations and surveys.
-- Build a scalable platform suitable for classroom environments.
+- Develop a scalable solution suitable for classroom environments.
 
 ---
 
 # Features
 
 - Bluetooth-based smartphone control
-- Automatic obstacle detection
+- Voice command control
 - Autonomous obstacle avoidance
-- Sound and voice interaction
+- Real-time obstacle detection
+- Intelligent navigation
 - Arduino-based embedded system
+- Servo-based environmental scanning
+- Sound and audio interaction
 - Portable battery-powered operation
+- Beginner-friendly architecture
 - Low-cost implementation
-- Beginner-friendly design
-- Educational STEM platform
+- Suitable for STEM education
 
 ---
 
-# Hardware Components
+# Project Highlights
 
-| Component | Description |
-|------------|-------------|
-| Arduino Uno | Main microcontroller |
-| HC-05 Bluetooth Module | Wireless communication |
-| HC-SR04 Ultrasonic Sensor | Obstacle detection |
-| L298N Motor Driver | Motor control |
-| SG90 Servo Motor | Sensor rotation |
-| DC Gear Motors | Robot movement |
-| Acrylic Chassis | Robot structure |
-| Speaker | Audio output |
-| Microphone Module | Sound detection |
-| Buzzer | Alert system |
-| Li-ion Batteries | Power supply |
-
----
-
-# Software Requirements
-
-- Arduino IDE
-- Embedded C/C++
-- Bluetooth Controller Application
-- AutoCAD (for chassis design)
-
----
-
-# Project Structure
-
-```
-Quanta-Dot/
-│
-├── Arduino_Code/
-│   └── robot.ino
-│
-├── Documentation/
-│   └── Final_Report.pdf
-│
-├── Circuit_Diagram/
-│   └── circuit_diagram.png
-│
-├── Hardware/
-│   ├── chassis_design.dwg
-│   ├── wiring.png
-│   └── components_list.pdf
-│
-├── Images/
-│   ├── robot.jpg
-│   ├── hardware.jpg
-│   ├── testing.jpg
-│   └── showcase.jpg
-│
-├── Videos/
-│   └── demo.mp4
-│
-├── LICENSE
-└── README.md
-```
+- Low-cost educational robotics platform
+- Supports both manual and autonomous operation
+- Controlled through smartphone and voice commands
+- Designed for beginner robotics education
+- Built using readily available hardware components
+- Suitable for schools, universities, and workshops
+- Promotes practical engineering and problem-solving skills
 
 ---
 
 # System Architecture
 
 ```
-Smartphone
-     │
-Bluetooth Communication
-     │
-HC-05 Module
-     │
-Arduino Uno
-     │
- ┌───────────────┬───────────────┐
- │               │               │
-Motor Driver   Ultrasonic     Buzzer
- │             Sensor            │
- │               │               │
-DC Motors     Servo Motor     Alerts
- │
-Robot Movement
+                    Smartphone
+                  /             \
+        Bluetooth Control    Voice Commands
+                \             /
+                 \           /
+              HC-05 Bluetooth Module
+                        │
+                  Arduino Uno
+                        │
+      ┌─────────────────┼─────────────────┐
+      │                 │                 │
+ Motor Driver     Ultrasonic Sensor   Speaker/Buzzer
+      │                 │
+      │           Servo Motor
+      │                 │
+   DC Motors     Obstacle Detection
+      │
+ Robot Navigation
 ```
 
 ---
 
-# Workflow
+# Hardware Components
 
-1. Connect the smartphone to the robot using Bluetooth.
-2. Send movement commands through the mobile application.
-3. Arduino processes the received commands.
-4. The motor driver controls the DC motors.
-5. The ultrasonic sensor continuously detects nearby obstacles.
-6. If an obstacle is detected:
-   - Stop the robot
-   - Rotate the sensor using the servo motor
-   - Measure left and right distances
-   - Move toward the safest direction
-7. Continue monitoring and responding in real time.
+| Component | Purpose |
+|------------|---------|
+| Arduino Uno | Main controller |
+| HC-05 Bluetooth Module | Wireless communication |
+| HC-SR04 Ultrasonic Sensor | Obstacle detection |
+| L298N Motor Driver | Motor control |
+| SG90 Servo Motor | Environmental scanning |
+| DC Gear Motors | Robot movement |
+| Acrylic Chassis | Robot body |
+| Microphone Module | Voice input |
+| Speaker | Audio output |
+| Buzzer | Alert indication |
+| Li-ion Batteries | Power supply |
+| Buck Converter | Voltage regulation |
+
+---
+
+# Software Stack
+
+### Programming
+
+- Embedded C/C++
+- Arduino IDE
+
+### Design
+
+- AutoCAD
+
+### Communication
+
+- Bluetooth Serial Communication
+
+### Mobile Control
+
+- Bluetooth & Voice Control Android Application
+
+---
+
+# How It Works
+
+### Bluetooth Mode
+
+1. Pair the smartphone with the HC-05 Bluetooth module.
+2. Open the mobile application.
+3. Send movement commands.
+4. Arduino processes the received instructions.
+5. The motor driver controls the robot accordingly.
+
+---
+
+### Voice Command Mode
+
+1. Connect the smartphone via Bluetooth.
+2. Speak predefined commands such as:
+
+```
+Forward
+Backward
+Left
+Right
+Stop
+```
+
+3. The mobile application converts voice into commands.
+4. Arduino receives the commands through Bluetooth.
+5. The robot performs the requested action in real time.
+
+---
+
+### Autonomous Mode
+
+1. The ultrasonic sensor continuously scans the environment.
+2. If no obstacle is detected, the robot moves forward.
+3. When an obstacle is found:
+
+- Robot stops
+- Servo rotates left
+- Distance is measured
+- Servo rotates right
+- Distance is measured
+- The safest direction is selected
+- Robot continues moving
+
+---
+
+# Operating Modes
+
+| Mode | Description |
+|------|-------------|
+| Bluetooth Control | Manual navigation using smartphone controls |
+| Voice Command | Robot movement using voice instructions |
+| Obstacle Avoidance | Autonomous navigation without user intervention |
 
 ---
 
 # Technologies Used
 
+## Hardware
+
 - Arduino Uno
-- Embedded C/C++
-- Arduino IDE
 - HC-05 Bluetooth Module
 - HC-SR04 Ultrasonic Sensor
 - L298N Motor Driver
 - SG90 Servo Motor
+- DC Gear Motors
+- Speaker
+- Microphone Module
+- Buzzer
+- 18650 Li-ion Batteries
+
+## Software
+
+- Arduino IDE
+- Embedded C++
 - AutoCAD
+- Bluetooth Controller Application
+- Voice Command Application
 
 ---
 
 # Testing and Validation
 
-The system has been tested for the following functionalities:
+The project has been successfully tested for:
 
+- Bluetooth communication
+- Voice command recognition
 - Forward movement
 - Backward movement
-- Left and right turning
-- Bluetooth communication
+- Left movement
+- Right movement
+- Emergency stop
 - Obstacle detection
 - Obstacle avoidance
-- Servo rotation
-- Battery stability
-- Overall system performance
+- Servo scanning
+- Power stability
+- Overall system reliability
 
 ---
 
-# Educational Impact
+# Educational & Social Impact
 
 The project aims to:
 
-- Promote practical STEM education.
-- Encourage hands-on robotics learning.
-- Improve problem-solving skills.
-- Increase technological awareness.
-- Support beginner-level robotics education.
+- Encourage hands-on STEM learning.
+- Improve understanding of robotics and embedded systems.
+- Reduce passive smartphone usage.
+- Promote productive use of technology.
+- Increase interest in engineering and AI.
+- Provide affordable robotics education.
+- Support beginner-level robotics workshops.
 
 ---
 
-# Social Impact
+# Budget
 
-- Reduces passive screen time.
-- Encourages productive technology usage.
-- Makes robotics education more affordable.
-- Supports rural and urban educational institutions.
-- Promotes engineering and AI awareness.
+| Item | Approximate Cost |
+|------|-----------------:|
+| Complete Robot | **BDT 5,000** |
 
 ---
 
-# Estimated Budget
+# Future Enhancements
 
-Approximate project cost: **BDT 5,000**
-
----
-
-# Future Work
-
-Future enhancements may include:
+Future versions of the project may include:
 
 - AI-powered voice assistant
 - Computer vision
-- Object detection
 - Face recognition
+- Object detection
 - Gesture control
 - Mobile application
 - IoT connectivity
-- Cloud integration
+- Cloud monitoring
 - Solar charging
-- OLED emotion display
+- OLED facial expressions
+- Remote learning platform
 
 ---
 
 # Achievements
 
-The project received the **Champion Award** at a robotics project showcase for its educational value, practical implementation, and innovative design.
+The project was presented at a robotics exhibition and project showcase and received the **Champion Award** for:
+
+- Educational innovation
+- Practical implementation
+- Interactive learning
+- Affordable design
+- Social impact
 
 ---
 
-# Team Members
+# Team
 
 | Name | Role |
 |------|------|
 | Arnica Sarker | Developer |
 | Julias Uddin Khan | Developer |
-| Shams Shahriar Haque | Developer |
 
 ---
 
@@ -251,48 +334,53 @@ University of Asia Pacific
 
 # Documentation
 
-The complete project report is available in the `Documentation` directory.
+The complete project report is available in the **Documentation** directory.
 
 ---
 
-# Demonstration
+# Demo
 
-A demonstration video can be found in the `Videos` directory or on YouTube.
+Project Demonstration
 
 ```
-https://youtube.com/your-demo-link
+YouTube:
+https://www.youtube.com/watch?v=yUOjvMF4w7Q&t=3s
 ```
 
 ---
 
-# Repository Contents
+# Repository
 
 ```
-.
-├── Arduino_Code
-├── Documentation
-├── Circuit_Diagram
-├── Hardware
-├── Images
-├── Videos
+Quanta-Dot/
+├── Arduino_Code/
+├── Circuit_Diagram/
+├── Documentation/
+├── Hardware/
+├── Images/
+├── Videos/
 ├── LICENSE
 └── README.md
 ```
 
 ---
 
+# Contributing
+
+Contributions are welcome.
+
+If you would like to improve the project:
+
+1. Fork the repository.
+2. Create a new feature branch.
+3. Commit your changes.
+4. Push the branch.
+5. Open a Pull Request.
+
+---
+
 # License
 
-This project is developed for educational and research purposes. Feel free to use and modify it with proper attribution.
+This project is intended for educational and research purposes.
 
 ---
-
-# Citation
-
-If you use this project in your research or educational work, please cite the repository appropriately.
-
----
-
-# Contact
-
-For questions, suggestions, or collaboration, feel free to open an issue or submit a pull request.
